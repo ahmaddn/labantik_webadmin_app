@@ -18,7 +18,8 @@ class S_Categories extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'id';
+    public $incrementing = false; // Karena bukan auto increment
+    protected $keyType = 'string'; // UUID adalah string
 
     /**
      * The attributes that are mass assignable.

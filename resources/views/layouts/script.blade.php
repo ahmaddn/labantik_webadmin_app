@@ -5,6 +5,10 @@
 <script src="{{ asset('assets/libs/prismjs/prism.js') }}"></script>
 <script src="{{ asset('assets/libs/lucide/umd/lucide.js') }}"></script>
 <script src="{{ asset('assets/js/starcode.bundle.js') }}"></script>
+
+<script src="{{ asset('assets/js/pages/form-editor-classic.init.js') }}"></script>
+<script src="{{ asset('assets/js/pages/landing-onepage.init.js') }}"></script>
+
 <script src="{{ asset('assets/js/datatables/jquery-3.7.0.js') }}"></script>
 <script src="{{ asset('assets/js/datatables/data-tables.min.js') }}"></script>
 <script src="{{ asset('assets/js/datatables/data-tables.tailwindcss.min.js') }}"></script>
@@ -20,5 +24,12 @@
 <!--dashboard ecommerce init js-->
 <script src="{{ asset('assets/js/pages/dashboards-ecommerce.init.js') }}"></script>
 
+<!-- cleave.js -->
+<script src="{{ asset('assets/libs/cleave.js/cleave.min.js') }}"></script>
+
+<script src="{{ asset('assets/js/pages/form-mask.init.js') }}"></script>
+
 <!-- App js -->
 <script src="{{ asset('assets/js/app.js') }}"></script>
+
+@stack('scripts')
