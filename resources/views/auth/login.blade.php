@@ -50,8 +50,10 @@
                     <div class="flex items-center justify-between gap-3">
                         <div class="grow">
                             <a href="#">
-                                <img src="assets/images/logo-light.png" alt="" class="hidden h-6 dark:block">
-                                <img src="assets/images/logo-dark.png" alt="" class="block h-6 dark:hidden">
+                                <img src="{{ asset('assets/images/logosmk.png') }}" alt=""
+                                    class="hidden h-14 dark:block">
+                                <img src="{{ asset('assets/images/logosmk.png') }}" alt=""
+                                    class="block h-14 dark:hidden">
                             </a>
                         </div>
                     </div>

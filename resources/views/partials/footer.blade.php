@@ -6,11 +6,11 @@
                     <div>
                         <script>
                             document.write(new Date().getFullYear())
-                        </script> StarCode Kh
+                        </script> SMKN 1 Talaga
                     </div>
                     <div class="hidden lg:block">
                         <div class="ltr:text-right rtl:text-left">
-                            Design & Develop by StarCode Kh
+                            Design & Develop by Labantik x ICT SMKN 1 Talaga
                         </div>
                     </div>
                 </div>
