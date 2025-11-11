@@ -18,7 +18,8 @@ class S_News extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'id';
+    public $incrementing = false; // Karena bukan auto increment
+    protected $keyType = 'string'; // UUID adalah string
 
     /**
      * The attributes that are mass assignable.
@@ -28,7 +29,33 @@ class S_News extends Model
     protected $fillable = [
         'title',
         'content',
-        'category_id',
+        's_category_id',
+        's_menu_id',
         'is_published',
+        'created_by',
+        'updated_by',
     ];
+
+    public function categories()
+    {
+        // kept for backward compatibility if referenced, but it's incorrect; add proper relation below
+        return $this->belongsTo(S_Categories::class, 's_category_id', 'id');
+    }
+
+    /**
+     * Proper belongsTo relation for a news item's category.
+     */
+    public function category()
+    {
+        return $this->belongsTo(S_Categories::class, 's_category_id', 'id');
+    }
+
+    public function createdBy()
+    {
+        return $this->belongsTo(User::class, 'created_by', 'id');
+    }
+    public function updatedBy()
+    {
+        return $this->belongsTo(User::class, 'updated_by', 'id');
+    }
 }

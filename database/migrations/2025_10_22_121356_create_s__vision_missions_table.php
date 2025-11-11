@@ -11,21 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('s_news', function (Blueprint $table) {
+        Schema::create('s_vision_missions', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('title');
-            $table->text('content');
+            $table->uuid('s_menu_id')->nullable();
+            $table->string('vision');
+            $table->text('mission');
             $table->uuid('created_by');
             $table->uuid('updated_by')->nullable();
-            $table->uuid('s_category_id');
-            $table->uuid('s_menu_id');
-            $table->boolean('is_published')->default(false);
             $table->timestamps();
 
-            $table->foreign('updated_by')->references('id')->on('core_users');
+            $table->foreign('s_menu_id')->references('id')->on('s_menus')->onDelete('set null');
             $table->foreign('created_by')->references('id')->on('core_users');
-            $table->foreign('s_category_id')->references('id')->on('s_categories');
-            $table->foreign('s_menu_id')->references('id')->on('s_menus');
+            $table->foreign('updated_by')->references('id')->on('core_users');
         });
     }
 
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('s__news');
+        Schema::dropIfExists('s__vision_missions');
     }
 };
