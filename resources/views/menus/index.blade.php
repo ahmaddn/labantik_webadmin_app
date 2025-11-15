@@ -92,11 +92,14 @@
                                             <td class="p-2">
                                                 <div class="flex gap-2">
                                                     <a href="#!" data-modal-target="editMenuModal{{ $m->id }}"
-                                                        class="flex items-center justify-center transition-all duration-200 ease-linear rounded-md size-8 edit-item-btn bg-slate-100 text-slate-500 hover:text-custom-500 hover:bg-custom-100 dark:bg-zink-600 dark:text-zink-200 dark:hover:bg-custom-500/20 dark:hover:text-custom-500"><i
-                                                            data-lucide="pencil" class="size-4"></i></a>
+                                                        class="flex items-center justify-center transition-all duration-200 ease-linear rounded-md size-8 edit-item-btn bg-slate-100 text-slate-500 hover:text-custom-500 hover:bg-custom-100 dark:bg-zink-600 dark:text-zink-200 dark:hover:bg-custom-500/20 dark:hover:text-custom-500">
+                                                        <i data-lucide="pencil" class="size-4"></i>
+                                                    </a>
+
                                                     <a href="#!" data-modal-target="deleteModal{{ $m->id }}"
-                                                        class="flex items-center justify-center transition-all duration-200 ease-linear rounded-md size-8 remove-item-btn bg-slate-100 text-slate-500 hover:text-custom-500 hover:bg-custom-100 dark:bg-zink-600 dark:text-zink-200 dark:hover:bg-custom-500/20 dark:hover:text-custom-500"><i
-                                                            data-lucide="trash-2" class="size-4"></i></a>
+                                                        class="flex items-center justify-center transition-all duration-200 ease-linear rounded-md size-8 remove-item-btn bg-slate-100 text-slate-500 hover:text-red-500 hover:bg-red-100 dark:bg-zink-600 dark:text-zink-200 dark:hover:bg-red-500/20 dark:hover:text-red-500">
+                                                        <i data-lucide="trash-2" class="size-4"></i>
+                                                    </a>
                                                 </div>
                                             </td>
                                         </tr>

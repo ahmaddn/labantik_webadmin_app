@@ -48,7 +48,6 @@ class ExtrakulikulerController extends Controller
         $ex->photo = $photoPath;
         $ex->description = $data['description'] ?? null;
         $ex->s_menu_id = $menuId;
-        $ex->user_id = Auth::id();
         $ex->save();
 
         return redirect()->route('extrakulikuler.index')->with('success', 'Ekstrakulikuler berhasil dibuat.');
