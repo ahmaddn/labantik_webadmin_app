@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\S_News;
 use App\Models\S_Categories as Category;
+use App\Models\S_Categories;
 use App\Models\S_Menu as Menu;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -85,9 +86,10 @@ class NewsController extends Controller
 
     {
         // get latest news, 15 per page
+        $categories = S_Categories::latest()->paginate(10);
         $news = S_News::with('category')->orderBy('created_at', 'desc')->simplePaginate(15);
 
-        return view('news.index', compact('news'));
+        return view('news.index', compact('news', 'categories'));
     }
     public function create()
     {
