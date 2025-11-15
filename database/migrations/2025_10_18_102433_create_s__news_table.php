@@ -19,7 +19,7 @@ return new class extends Migration
             $table->uuid('updated_by')->nullable();
             $table->uuid('s_category_id');
             $table->uuid('s_menu_id');
-            $table->boolean('is_published')->default(false);
+            $table->boolean('is_published')->default(true);
             $table->timestamps();
 
             $table->foreign('updated_by')->references('id')->on('core_users');

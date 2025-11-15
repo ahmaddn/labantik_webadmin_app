@@ -25,4 +25,25 @@ class CategoriesController extends Controller
 
         return redirect()->back()->with('success', 'Kategori berhasil ditambahkan.');
     }
+
+    public function update(Request $request, $id)
+    {
+        $category = S_Categories::find($id);
+
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        $category->update($data);
+
+        return redirect()->route('news.index')->with('success', 'Kategori berhasil diubah.');
+    }
+    public function destroy($id)
+    {
+        $category = S_Categories::find($id);
+
+        $category->delete();
+
+        return redirect()->route('news.index')->with('success', 'Kategori berhasil dihapus.');
+    }
 }
